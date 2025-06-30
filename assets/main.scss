@@ -1,0 +1,227 @@
+---
+# Only the main Sass file needs front matter (the dashes are enough)
+---
+
+@import "minima";
+
+/* Custom styles for academic website */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.6;
+  color: #333;
+}
+
+.wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.site-header {
+  border-bottom: 1px solid #e8e8e8;
+  background-color: #fdfdfd;
+  padding: 20px 0;
+}
+
+.site-title {
+  font-size: 26px;
+  font-weight: 600;
+  color: #424242;
+  text-decoration: none;
+}
+
+.site-title:hover {
+  text-decoration: none;
+  color: #111;
+}
+
+/* Profile container */
+.profile-container {
+  display: flex;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.profile-content {
+  flex: 1;
+}
+
+.profile-image {
+  flex: 0 0 200px;
+}
+
+.profile-image img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Typography */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 20px;
+  border-bottom: 3px solid #eee;
+  padding-bottom: 10px;
+}
+
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 8px;
+}
+
+/* Contact info */
+.contact-info {
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.contact-info a {
+  color: #1e6bb8;
+  text-decoration: none;
+}
+
+.contact-info a:hover {
+  text-decoration: underline;
+}
+
+/* About section */
+.about-section {
+  margin-bottom: 40px;
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* Publications */
+.publications-section ol {
+  counter-reset: publication-counter;
+  list-style: none;
+  padding-left: 0;
+}
+
+.publications-section li {
+  counter-increment: publication-counter;
+  margin-bottom: 15px;
+  padding-left: 30px;
+  position: relative;
+}
+
+.publications-section li::before {
+  content: counter(publication-counter) ".";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-weight: 600;
+  color: #666;
+}
+
+/* Projects */
+.projects-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.projects-section li {
+  margin-bottom: 15px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.projects-section li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #1e6bb8;
+  font-weight: bold;
+}
+
+/* Talks */
+.talks-section ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.talks-section li {
+  margin-bottom: 10px;
+  padding-left: 20px;
+  position: relative;
+}
+
+.talks-section li::before {
+  content: "◦";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: #666;
+  font-weight: bold;
+}
+
+/* Links */
+a {
+  color: #1e6bb8;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Footer */
+.site-footer {
+  border-top: 1px solid #e8e8e8;
+  background-color: #fdfdfd;
+  margin-top: 60px;
+  padding: 30px 0;
+}
+
+.footer-col-wrapper {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.footer-col {
+  flex: 1;
+  margin-right: 20px;
+}
+
+.footer-col:last-child {
+  margin-right: 0;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+  }
+  
+  .profile-image {
+    flex: none;
+    align-self: center;
+    max-width: 200px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .wrapper {
+    padding: 0 15px;
+  }
+  
+  .footer-col-wrapper {
+    flex-direction: column;
+  }
+  
+  .footer-col {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
